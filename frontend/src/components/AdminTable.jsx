@@ -8,10 +8,10 @@
 function AdminTable({ rsvps, totalHeadcount }) {
   if (rsvps.length === 0) {
     return (
-      <div className="text-center py-16">
-        <div className="text-5xl mb-4" aria-hidden="true">📭</div>
-        <h3 className="font-display text-xl text-slate-200/60 mb-2">No RSVPs yet</h3>
-        <p className="text-slate-200/40 text-sm font-body">Check back soon — responses will appear here.</p>
+      <div className="empty-state">
+        <div className="empty-icon" aria-hidden="true">📭</div>
+        <h3 className="section-title text-muted" style={{fontSize: '1.25rem'}}>No RSVPs yet</h3>
+        <p className="text-muted text-sm font-body">Check back soon — responses will appear here.</p>
       </div>
     );
   }
@@ -19,47 +19,44 @@ function AdminTable({ rsvps, totalHeadcount }) {
   return (
     <div>
       {/* Aggregate Summary Card */}
-      <div className="glass-card gold-border rounded-2xl p-6 mb-8 text-center">
-        <p className="text-gold-400 text-xs tracking-widest uppercase font-body mb-1">
+      <div className="glass-card gold-border summary-card">
+        <p className="summary-label">
           Total Expected Guests
         </p>
-        <p className="font-display text-6xl sm:text-7xl text-gradient-gold">
+        <p className="summary-value text-gradient-gold">
           {totalHeadcount}
         </p>
-        <p className="text-slate-200/50 text-sm font-body mt-2">
+        <p className="text-muted text-sm mt-2">
           across {rsvps.length} {rsvps.length === 1 ? 'response' : 'responses'}
         </p>
       </div>
 
       {/* RSVP Records Table */}
-      <div className="overflow-x-auto rounded-xl gold-border">
-        <table className="w-full text-sm font-body" aria-label="RSVP responses">
+      <div className="table-wrapper gold-border">
+        <table className="admin-table" aria-label="RSVP responses">
           <thead>
-            <tr className="bg-silver-800 text-gold-400 text-xs tracking-wider uppercase">
-              <th scope="col" className="px-4 py-3 text-left">#</th>
-              <th scope="col" className="px-4 py-3 text-left">Full Name</th>
-              <th scope="col" className="px-4 py-3 text-center">Status</th>
-              <th scope="col" className="px-4 py-3 text-center">Party Size</th>
-              <th scope="col" className="px-4 py-3 text-right">Submitted</th>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Full Name</th>
+              <th scope="col" className="text-center">Status</th>
+              <th scope="col" className="text-center">Party Size</th>
+              <th scope="col" className="text-right">Submitted</th>
             </tr>
           </thead>
           <tbody>
             {rsvps.map((rsvp, idx) => (
-              <tr
-                key={rsvp._id}
-                className="border-t border-white/5 hover:bg-silver-800/50 transition-colors duration-150"
-              >
-                <td className="px-4 py-3 text-slate-200/40">{idx + 1}</td>
-                <td className="px-4 py-3 text-slate-50 font-medium">{rsvp.name}</td>
-                <td className="px-4 py-3 text-center">
-                  <span className="inline-flex items-center gap-1 text-emerald-400 bg-emerald-400/10 px-2.5 py-0.5 rounded-full text-xs">
+              <tr key={rsvp._id}>
+                <td className="text-muted">{idx + 1}</td>
+                <td className="text-slate-50" style={{fontWeight: 500}}>{rsvp.name}</td>
+                <td className="text-center">
+                  <span className="status-badge">
                     ✓ Confirmed
                   </span>
                 </td>
-                <td className="px-4 py-3 text-center text-gold-400 font-semibold">
+                <td className="text-center text-gold-400" style={{fontWeight: 600}}>
                   {rsvp.maxGuests}
                 </td>
-                <td className="px-4 py-3 text-right text-slate-200/40 text-xs whitespace-nowrap">
+                <td className="text-right text-muted" style={{fontSize: '0.75rem', whiteSpace: 'nowrap'}}>
                   {new Date(rsvp.createdAt).toLocaleDateString('en-PH', {
                     month: 'short', day: 'numeric', year: 'numeric',
                   })}
@@ -68,11 +65,11 @@ function AdminTable({ rsvps, totalHeadcount }) {
             ))}
           </tbody>
           <tfoot>
-            <tr className="border-t border-gold-600/30 bg-silver-800/50">
-              <td colSpan={3} className="px-4 py-3 text-right text-slate-200/50 text-xs uppercase tracking-wider">
+            <tr style={{backgroundColor: 'rgba(243, 244, 246, 0.5)'}}>
+              <td colSpan={3} className="text-right text-muted" style={{textTransform: 'uppercase', letterSpacing: '0.05em'}}>
                 Total
               </td>
-              <td className="px-4 py-3 text-center text-gold-400 font-bold text-base">
+              <td className="text-center text-gold-400" style={{fontWeight: 'bold', fontSize: '1rem'}}>
                 {totalHeadcount}
               </td>
               <td />

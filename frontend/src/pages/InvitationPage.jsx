@@ -14,40 +14,37 @@ function InvitationPage() {
   }, []);
 
   return (
-    <main className="min-h-screen">
+    <main style={{minHeight: '100vh'}}>
       <HeroSection />
 
       {/* Entourage Sections */}
-      <div className="border-t border-gold-600/20">
+      <div style={{borderTop: '1px solid rgba(201, 162, 39, 0.2)'}}>
         <EntourageSection
           title="16 Roses"
           members={ROSES}
-          icon="🌹"
-          accentColor="text-ruby-300"
+          accentColor="text-slate-600"
         />
-        <div className="h-px bg-gold-600/10 max-w-4xl mx-auto" aria-hidden="true" />
+        <div className="divider" style={{maxWidth: '56rem'}} aria-hidden="true" />
         <EntourageSection
           title="16 Blue Bills"
           members={BLUE_BILLS}
-          icon="💙"
-          accentColor="text-blue-300"
+          accentColor="text-slate-600"
         />
-        <div className="h-px bg-gold-600/10 max-w-4xl mx-auto" aria-hidden="true" />
+        <div className="divider" style={{maxWidth: '56rem'}} aria-hidden="true" />
         <EntourageSection
           title="16 Gifts"
           members={GIFTS}
-          icon="🎁"
-          accentColor="text-gold-300"
+          accentColor="text-slate-600"
         />
       </div>
 
       {/* RSVP Section */}
-      <section className="border-t border-gold-600/20 py-16 px-4">
-        <div className="text-center mb-10">
-          <h2 className="font-display text-3xl sm:text-4xl text-gradient-gold mb-3">
+      <section className="rsvp-section" style={{borderTop: '1px solid rgba(201, 162, 39, 0.2)'}}>
+        <div className="text-center" style={{marginBottom: '2.5rem'}}>
+          <h2 className="section-title text-gradient-gold" style={{marginBottom: '0.75rem'}}>
             RSVP
           </h2>
-          <p className="text-slate-200/70 font-body text-base max-w-md mx-auto">
+          <p className="font-body text-slate-600" style={{maxWidth: '28rem', margin: '0 auto', opacity: 0.7}}>
             Please confirm your attendance so we can celebrate together.
           </p>
         </div>
@@ -55,7 +52,7 @@ function InvitationPage() {
       </section>
 
       {/* Footer */}
-      <footer className="text-center py-8 text-slate-200/30 text-xs font-body border-t border-white/5">
+      <footer className="text-center font-body text-slate-600" style={{padding: '2rem 0', fontSize: '0.75rem', opacity: 0.3, borderTop: '1px solid rgba(0,0,0,0.05)'}}>
         Rizza @ 60 &copy; 2026 — Made with love for a very special celebration
       </footer>
     </main>

@@ -41,35 +41,35 @@ function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen px-4 py-10 sm:py-14">
-      <div className="max-w-5xl mx-auto">
+    <div className="dashboard-layout">
+      <div className="dashboard-container">
 
         {/* Header */}
-        <header className="text-center mb-10">
-          <p className="text-gold-400 text-xs tracking-widest uppercase font-body mb-2">
+        <header className="dashboard-header">
+          <p className="dashboard-eyebrow font-body">
             Admin Dashboard
           </p>
-          <h1 className="font-display text-4xl sm:text-5xl text-gradient-gold mb-2">
+          <h1 className="font-display dashboard-title text-gradient-gold">
             Rizza @ 60
           </h1>
-          <p className="text-slate-200/50 font-body text-sm">
+          <p className="font-body dashboard-subtitle">
             RSVP Response Tracker — December 27, 2026
           </p>
         </header>
 
         {/* Loading State */}
         {loading && (
-          <div className="text-center py-16" role="status" aria-live="polite">
-            <div className="inline-block w-10 h-10 border-2 border-gold-400 border-t-transparent rounded-full animate-spin mb-4" aria-hidden="true" />
-            <p className="text-slate-200/50 font-body text-sm">Loading responses…</p>
+          <div className="loading-state" role="status" aria-live="polite">
+            <div className="spinner" aria-hidden="true" />
+            <p className="font-body text-slate-600" style={{fontSize: '0.875rem', opacity: 0.5}}>Loading responses…</p>
           </div>
         )}
 
         {/* Error State */}
         {!loading && fetchError && (
-          <div className="glass-card border border-ruby-400/30 rounded-2xl p-8 text-center">
-            <div className="text-4xl mb-3" aria-hidden="true">⚠️</div>
-            <p className="text-ruby-400 font-body mb-4">{fetchError}</p>
+          <div className="glass-card error-state">
+            <div className="error-icon" aria-hidden="true">⚠️</div>
+            <p className="font-body error-text">{fetchError}</p>
             <button onClick={fetchRsvps} className="btn-gold">
               Retry
             </button>
@@ -79,10 +79,10 @@ function AdminDashboard() {
         {/* Data Table */}
         {!loading && !fetchError && (
           <>
-            <div className="flex justify-end mb-4">
+            <div className="flex-right">
               <button
                 onClick={fetchRsvps}
-                className="text-gold-400 hover:text-gold-300 text-sm font-body transition-colors duration-200 flex items-center gap-1"
+                className="refresh-btn font-body"
                 aria-label="Refresh RSVP data"
               >
                 ↻ Refresh

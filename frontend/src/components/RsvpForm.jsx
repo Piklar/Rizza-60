@@ -68,11 +68,11 @@ function RsvpForm() {
 
   if (submitted) {
     return (
-      <div className="max-w-md mx-auto glass-card gold-border rounded-2xl p-8 text-center">
-        <div className="text-5xl mb-4" aria-hidden="true">🎊</div>
-        <h3 className="font-display text-2xl text-gold-400 mb-2">You&rsquo;re on the list!</h3>
-        <p className="text-slate-200/70 font-body text-sm">
-          Thank you, <strong className="text-slate-50">{form.name}</strong>. We can&apos;t wait to celebrate with you!
+      <div className="glass-card gold-border text-center" style={{maxWidth: '28rem', margin: '0 auto'}}>
+        <div style={{fontSize: '3rem', marginBottom: '1rem'}} aria-hidden="true">🎊</div>
+        <h3 className="font-display text-gold-400" style={{fontSize: '1.5rem', marginBottom: '0.5rem'}}>You&rsquo;re on the list!</h3>
+        <p className="font-body text-slate-600" style={{fontSize: '0.875rem', opacity: 0.7}}>
+          Thank you, <strong className="text-slate-800">{form.name}</strong>. We can&apos;t wait to celebrate with you!
         </p>
       </div>
     );
@@ -82,12 +82,13 @@ function RsvpForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="max-w-md mx-auto glass-card gold-border rounded-2xl p-6 sm:p-8 space-y-5"
+      className="glass-card gold-border"
+      style={{maxWidth: '28rem', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.25rem'}}
       aria-label="RSVP Form"
     >
       {/* Full Name */}
-      <div>
-        <label htmlFor="name" className="block text-gold-400 text-sm font-body mb-1.5">
+      <div className="form-group" style={{marginBottom: 0}}>
+        <label htmlFor="name" className="input-label" style={{color: 'var(--gold-400)'}}>
           Full Name <span aria-hidden="true" className="text-ruby-400">*</span>
         </label>
         <input
@@ -99,21 +100,21 @@ function RsvpForm() {
           disabled={loading}
           placeholder="e.g. Maria Santos"
           autoComplete="name"
-          className={`input-field ${errors.name ? 'border-ruby-400 focus:ring-ruby-400' : ''}`}
+          className={`input-field ${errors.name ? 'border-ruby-400' : ''}`}
           aria-required="true"
           aria-invalid={!!errors.name}
           aria-describedby={errors.name ? 'name-error' : undefined}
         />
         {errors.name && (
-          <p id="name-error" role="alert" className="mt-1 text-ruby-400 text-xs font-body">
+          <p id="name-error" role="alert" className="text-ruby-400 font-body" style={{fontSize: '0.75rem', marginTop: '0.25rem'}}>
             {errors.name}
           </p>
         )}
       </div>
 
       {/* Party Size */}
-      <div>
-        <label htmlFor="maxGuests" className="block text-gold-400 text-sm font-body mb-1.5">
+      <div className="form-group" style={{marginBottom: 0}}>
+        <label htmlFor="maxGuests" className="input-label" style={{color: 'var(--gold-400)'}}>
           How many are coming? <span aria-hidden="true" className="text-ruby-400">*</span>
         </label>
         <input
@@ -125,35 +126,36 @@ function RsvpForm() {
           value={form.maxGuests}
           onChange={handleChange}
           disabled={loading}
-          className={`input-field ${errors.maxGuests ? 'border-ruby-400 focus:ring-ruby-400' : ''}`}
+          className={`input-field ${errors.maxGuests ? 'border-ruby-400' : ''}`}
           aria-required="true"
           aria-invalid={!!errors.maxGuests}
           aria-describedby={errors.maxGuests ? 'guests-error' : 'guests-hint'}
         />
-        <p id="guests-hint" className="mt-1 text-slate-200/40 text-xs font-body">
+        <p id="guests-hint" className="font-body" style={{fontSize: '0.75rem', marginTop: '0.25rem'}}>
           Include yourself in the count
         </p>
         {errors.maxGuests && (
-          <p id="guests-error" role="alert" className="mt-1 text-ruby-400 text-xs font-body">
+          <p id="guests-error" role="alert" className="text-ruby-400 font-body" style={{fontSize: '0.75rem', marginTop: '0.25rem'}}>
             {errors.maxGuests}
           </p>
         )}
       </div>
 
       {/* Attendance status — always accepted in v1 */}
-      <div className="glass-card rounded-lg px-4 py-3 flex items-center gap-3">
-        <span className="text-gold-400 text-lg" aria-hidden="true">✓</span>
-        <p className="text-slate-200/80 text-sm font-body">I will be attending</p>
+      <div className="glass-card" style={{padding: '0.75rem 1rem', display: 'flex', alignItems: 'center', gap: '0.75rem'}}>
+        <span className="text-gold-400" style={{fontSize: '1.125rem'}} aria-hidden="true">✓</span>
+        <p className="font-body text-slate-600" style={{fontSize: '0.875rem', opacity: 0.8, margin: 0}}>I will be attending</p>
       </div>
 
       {/* Submit */}
       <button
         type="submit"
         disabled={loading}
-        className="btn-gold w-full text-base"
+        className="btn-gold"
+        style={{width: '100%', fontSize: '1rem', marginTop: '0.5rem'}}
         aria-busy={loading}
       >
-        {loading ? 'Sending RSVP…' : 'Confirm Attendance 🎉'}
+        {loading ? 'Sending RSVP…' : 'Confirm Attendance'}
       </button>
     </form>
   );

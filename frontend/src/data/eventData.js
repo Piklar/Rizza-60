@@ -8,9 +8,9 @@ export const EVENT_DETAILS = {
   title:         'Rizza @ 60',
   date:          'December 27, 2026 (Sunday)',
   venue:         'Celandine Balintawak (Event Hall)',
-  dressWomen:    'Dress — all colours except Red',
-  dressMen:      'Polo — all colours except Red',
-  dressNote:     'All colours permitted except Red',
+  dressWomen:    'Cocktail Dress in any colors',
+  dressMen:      'Polo & Pants in any colors',
+  dressNote:     'All colors permitted',
   mapsUrl:       'https://maps.app.goo.gl/esNiJjDYitydL9Xf8',
 };
 

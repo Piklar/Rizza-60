@@ -21,16 +21,16 @@ function PinGate({ onSuccess }) {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
-      <div className="glass-card gold-border rounded-2xl p-8 w-full max-w-sm text-center">
-        <div className="text-4xl mb-4" aria-hidden="true">🔐</div>
-        <h1 className="font-display text-2xl text-gradient-gold mb-2">Admin Access</h1>
-        <p className="text-slate-200/60 text-sm font-body mb-6">
+    <div className="pin-gate-container">
+      <div className="glass-card gold-border pin-gate-card">
+        <div className="pin-gate-icon" aria-hidden="true">🔐</div>
+        <h1 className="font-display pin-gate-title text-gradient-gold">Admin Access</h1>
+        <p className="font-body pin-gate-subtitle">
           Enter the admin PIN to view RSVP responses.
         </p>
 
         <form onSubmit={handleSubmit} aria-label="Admin PIN form">
-          <label htmlFor="admin-pin" className="block text-gold-400 text-sm font-body mb-1.5 text-left">
+          <label htmlFor="admin-pin" className="input-label" style={{textAlign: 'left', color: 'var(--gold-400)'}}>
             PIN
           </label>
           <input
@@ -40,17 +40,18 @@ function PinGate({ onSuccess }) {
             onChange={(e) => { setPin(e.target.value); setError(''); }}
             placeholder="Enter admin PIN"
             autoComplete="current-password"
-            className={`input-field mb-4 ${error ? 'border-ruby-400 focus:ring-ruby-400' : ''}`}
+            className={`input-field ${error ? 'border-ruby-400' : ''}`}
+            style={{marginBottom: '1rem'}}
             aria-required="true"
             aria-invalid={!!error}
             aria-describedby={error ? 'pin-error' : undefined}
           />
           {error && (
-            <p id="pin-error" role="alert" className="text-ruby-400 text-xs font-body mb-3 -mt-2 text-left">
+            <p id="pin-error" role="alert" className="text-ruby-400" style={{fontSize: '0.75rem', marginBottom: '0.75rem', marginTop: '-0.5rem', textAlign: 'left'}}>
               {error}
             </p>
           )}
-          <button type="submit" className="btn-gold w-full">
+          <button type="submit" className="btn-gold" style={{width: '100%'}}>
             Enter Dashboard
           </button>
         </form>
