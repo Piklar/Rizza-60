@@ -98,6 +98,17 @@
 - **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
 - **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
 
+### UI Requirements *(include if feature has a UI surface)*
+
+All UI requirements MUST align with the [project constitution](.specify/memory/constitution.md):
+
+- **UI-001**: All UI components MUST render correctly at sm (≥480px), md (≥768px), lg (≥1024px),
+  and xl (≥1280px) breakpoints.
+- **UI-002**: All interactive elements MUST meet WCAG 2.1 AA color contrast (≥4.5:1 for text).
+- **UI-003**: All state transitions (hover, focus, loading, error) MUST use CSS transitions.
+- **UI-004**: All UI components MUST use design tokens for color, spacing, and typography.
+- **UI-005**: Loading, empty, and error states MUST be defined for every data-driven surface.
+
 ### Key Entities *(include if feature involves data)*
 
 - **[Entity 1]**: [What it represents, key attributes without implementation]

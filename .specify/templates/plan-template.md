@@ -40,7 +40,17 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Verify the following against `.specify/memory/constitution.md` before proceeding:
+
+| Principle | Gate Question | Status |
+|-----------|---------------|--------|
+| I. Clean Code | Are all new functions/modules single-purpose and ≤ 40 lines? | [ ] |
+| II. Responsive UI | Is every UI element designed mobile-first with defined breakpoints (sm/md/lg/xl)? | [ ] |
+| III. Fluid & Adaptive Design | Do all state transitions use CSS transitions? Are design tokens used for spacing/color/type? | [ ] |
+| IV. Component-Driven Architecture | Is the feature decomposed into isolated, reusable components with documented props? | [ ] |
+| V. Performance & Accessibility | Are Core Web Vitals targets met? Is WCAG 2.1 AA compliance planned? | [ ] |
+
+> **If any gate is ❌, address it before Phase 0 research begins.**
 
 ## Project Structure
 
