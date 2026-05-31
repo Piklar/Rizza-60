@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global Base ───────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: radial-gradient(circle at top, #FFFFFF 0%, #E5E7EB 100%);
+    @apply text-slate-100 font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+/* ── Reusable Utilities ────────────────────────────────────────── */
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #FAD96A 0%, #E0B030 40%, #B8860B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07);
+  }
+
+  .gold-border {
+    border: 1px solid rgba(224, 176, 48, 0.4);
+  }
+}
+
+/* ── Micro-animations ──────────────────────────────────────────── */
+@layer components {
+  .animate-on-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .name-card {
+    @apply animate-on-hover;
+  }
+
+  .name-card:hover {
+    @apply -translate-y-0.5 text-gold-400;
+  }
+
+  .btn-gold {
+    @apply bg-gold-500 text-silver-900 font-semibold px-6 py-3 rounded-lg;
+    @apply transition-all duration-200 ease-out;
+    @apply hover:bg-gold-400 hover:shadow-lg hover:-translate-y-0.5;
+    @apply focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2 focus:ring-offset-silver-900;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+
+  .input-field {
+    @apply w-full bg-silver-800 border border-silver-700 text-slate-50 rounded-lg px-4 py-3;
+    @apply placeholder:text-slate-200/40;
+    @apply focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent;
+    @apply transition-all duration-200;
+  }
+}
+
+/* ── Reduced Motion ────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
