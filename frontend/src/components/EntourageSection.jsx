@@ -14,9 +14,6 @@ function EntourageSection({ title, members, accentColor = 'text-slate-100' }) {
         <h2 className="section-title text-gradient-gold">
           {title}
         </h2>
-        <p className="section-subtitle font-body">
-          {members.length} honoured members
-        </p>
         <div className="flex-center" style={{gap: '0.75rem', marginTop: '1rem'}} aria-hidden="true">
           <span className="divider" style={{width: '3rem'}} />
           <span className="text-gold-600" style={{fontSize: '0.75rem'}}>✦</span>
