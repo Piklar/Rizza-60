@@ -54,7 +54,8 @@ function HeroSection() {
         </p>
         <p className="font-display text-slate-800" style={{fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase', lineHeight: 1.5, marginBottom: '2rem'}}>
           <span style={{display: 'block'}}>THE CELANDINE</span>
-          <span style={{display: 'block'}}>BALINTAWAK QUEZON CITY</span>
+          <span style={{display: 'block'}}>BALINTAWAK, QUEZON CITY</span>
+          <span style={{display: 'block'}}>(EVENT HALL)</span>
         </p>
 
         {/* Divider */}
