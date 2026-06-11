@@ -44,7 +44,7 @@ function InvitationPage() {
           <h2 className="section-title text-gradient-gold" style={{marginBottom: '0.75rem'}}>
             RSVP
           </h2>
-          <p className="font-body text-slate-600" style={{maxWidth: '28rem', margin: '0 auto', opacity: 0.7}}>
+          <p className="font-body" style={{maxWidth: '28rem', margin: '0 auto', color: 'rgba(255,255,255,0.82)'}}>
             Please confirm your attendance so we can celebrate together.
           </p>
         </div>
