@@ -44,7 +44,7 @@ function InvitationPage() {
           <h2 className="section-title text-gradient-gold" style={{marginBottom: '0.75rem'}}>
             RSVP
           </h2>
-          <p className="font-body" style={{maxWidth: '28rem', margin: '0 auto', color: 'rgba(192,192,192,0.9)'}}>
+          <p className="font-body" style={{maxWidth: '28rem', margin: '0 auto', color: '#A8A8A8'}}>
             Please confirm your attendance so we can celebrate together.
           </p>
         </div>
@@ -52,7 +52,7 @@ function InvitationPage() {
       </section>
 
       {/* Footer */}
-      <footer className="text-center font-body text-slate-600" style={{padding: '2rem 0', fontSize: '0.75rem', opacity: 0.3, borderTop: '1px solid rgba(0,0,0,0.05)'}}>
+      <footer className="text-center font-body" style={{padding: '2rem 0', fontSize: '0.75rem', color: '#A8A8A8', opacity: 0.6, borderTop: '1px solid rgba(232,232,232,0.1)'}}>
         Rizza @ 60 &copy; 2026 — Made with love for a very special celebration
       </footer>
     </main>

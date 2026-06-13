@@ -42,7 +42,7 @@ function HeroSection() {
       <div className="animate-fade-in-up opacity-0"
            style={{ animationDelay: '0.65s', animationFillMode: 'forwards' }}>
 
-        <p className="font-display" style={{fontSize: '1.125rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.25rem', color: 'rgba(201, 86, 106, 0.9)'}}>
+        <p className="font-display" style={{fontSize: '1.125rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.25rem', color: '#D4D0CA'}}>
           SUNDAY, DECEMBER 27, 2026
         </p>
         <p className="font-display" style={{fontSize: '1rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '2rem', color: 'rgba(212, 208, 202, 0.7)'}}>
