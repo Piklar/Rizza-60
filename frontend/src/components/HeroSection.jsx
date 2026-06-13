@@ -33,26 +33,26 @@ function HeroSection() {
       <div className="animate-fade-in flex-center opacity-0"
            style={{ gap: '0.75rem', marginBottom: '2rem', animationDelay: '0.55s', animationFillMode: 'forwards' }}
            aria-hidden="true">
-        <span className="divider" style={{width: '6rem', backgroundColor: 'rgba(201, 162, 39, 0.4)'}} />
-        <span className="text-gold-600" style={{fontSize: '0.875rem'}}>✦</span>
-        <span className="divider" style={{width: '6rem', backgroundColor: 'rgba(201, 162, 39, 0.4)'}} />
+        <span className="divider" style={{width: '6rem'}} />
+          <span style={{fontSize: '0.875rem', color: 'rgba(201, 86, 106, 0.7)'}}>✦</span>
+          <span className="divider" style={{width: '6rem'}} />
       </div>
 
       {/* Event Details Vertical Stack */}
       <div className="animate-fade-in-up opacity-0"
            style={{ animationDelay: '0.65s', animationFillMode: 'forwards' }}>
 
-        <p className="font-display text-gold-600" style={{fontSize: '1.125rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.25rem'}}>
+        <p className="font-display" style={{fontSize: '1.125rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.25rem', color: 'rgba(201, 86, 106, 0.9)'}}>
           SUNDAY, DECEMBER 27, 2026
         </p>
-        <p className="font-display" style={{fontSize: '1rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '2rem', color: 'rgba(255,255,255,0.75)'}}>
+        <p className="font-display" style={{fontSize: '1rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '2rem', color: 'rgba(212, 208, 202, 0.7)'}}>
           AT 4:00 PM
         </p>
 
-        <p className="font-script text-gold-600" style={{fontSize: '2.5rem', lineHeight: 1, marginBottom: '0.75rem'}}>
+        <p className="font-script" style={{fontSize: '2.5rem', lineHeight: 1, marginBottom: '0.75rem', color: 'var(--ruby-400)'}}>
           Venue
         </p>
-        <p className="font-display" style={{fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase', lineHeight: 1.5, marginBottom: '2rem', color: 'rgba(255,255,255,0.82)', textShadow: '0 1px 6px rgba(0,0,0,0.6)'}}>
+        <p className="font-display" style={{fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase', lineHeight: 1.5, marginBottom: '2rem', color: 'rgba(212, 208, 202, 0.78)', textShadow: '0 1px 6px rgba(0,0,0,0.7)'}}>
           <span style={{display: 'block'}}>THE CELANDINE</span>
           <span style={{display: 'block'}}>BALINTAWAK, QUEZON CITY</span>
           <span style={{display: 'block'}}>(EVENT HALL)</span>
@@ -60,15 +60,15 @@ function HeroSection() {
 
         {/* Divider */}
         <div className="flex-center" style={{gap: '0.75rem', marginBottom: '2rem'}} aria-hidden="true">
-          <span className="divider" style={{width: '6rem', backgroundColor: 'rgba(201, 162, 39, 0.4)'}} />
-          <span className="text-gold-600" style={{fontSize: '0.875rem'}}>✦</span>
-          <span className="divider" style={{width: '6rem', backgroundColor: 'rgba(201, 162, 39, 0.4)'}} />
+          <span className="divider" style={{width: '6rem'}} />
+          <span style={{fontSize: '0.875rem', color: 'rgba(201, 86, 106, 0.7)'}}>✦</span>
+          <span className="divider" style={{width: '6rem'}} />
         </div>
 
-        <p className="font-script text-gold-600" style={{fontSize: '2.5rem', lineHeight: 1, marginBottom: '0.75rem'}}>
+        <p className="font-script" style={{fontSize: '2.5rem', lineHeight: 1, marginBottom: '0.75rem', color: 'var(--ruby-400)'}}>
           Dress Code
         </p>
-        <p className="font-display" style={{fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase', lineHeight: 1.625, maxWidth: '28rem', margin: '0 auto', color: 'rgba(255,255,255,0.82)', textShadow: '0 1px 6px rgba(0,0,0,0.6)'}}>
+        <p className="font-display" style={{fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase', lineHeight: 1.625, maxWidth: '28rem', margin: '0 auto', color: 'rgba(212, 208, 202, 0.78)', textShadow: '0 1px 6px rgba(0,0,0,0.7)'}}>
           KINDLY COME IN COCKTAIL DRESS FOR LADIES AND PANTS & POLO FOR GENTLEMEN IN ANY COLORS EXCEPT RED
         </p>
 

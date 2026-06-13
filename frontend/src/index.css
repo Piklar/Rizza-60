@@ -1,23 +1,33 @@
 /* ── Design Tokens ─────────────────────────────────────────────── */
 :root {
-  --gold-300: #FAD96A;
-  --gold-400: #F5C842;
-  --gold-500: #E0B030;
-  --gold-600: #C9A227;
-  
-  --silver-700: #D1D5DB;
-  --silver-800: #F3F4F6;
-  --silver-900: #FFFFFF;
-  
-  --slate-50:  #F8FAFC;
-  --slate-100: #F1F5F9;
-  --slate-200: #E2E8F0;
-  --slate-600: #475569;
-  --slate-800: #1e293b;
+  /*
+   * Palette: Garnet Crimson + Antique Silver
+   * Red tones are desaturated & warm — no harsh neon reds.
+   * Silver tones carry a gentle warm undertone.
+   */
 
-  --ruby-300:  #FCA5A5;
-  --ruby-400:  #F87171;
-  --ruby-500: #DC2626;
+  /* Crimson-rose accent (primary) */
+  --gold-300: #E8A0A8;   /* soft rose petal */
+  --gold-400: #C9566A;   /* warm crimson-rose */
+  --gold-500: #A03248;   /* muted garnet */
+  --gold-600: #7A1F30;   /* deep wine-garnet */
+
+  /* Antique warm silver (secondary) */
+  --silver-700: #B8B4AF; /* warm mid-silver */
+  --silver-800: #E2DED8; /* warm light silver */
+  --silver-900: #F0EDE8; /* warm near-white */
+
+  /* Text hierarchy */
+  --slate-50:  #F4F1EC;
+  --slate-100: #D4D0CA; /* primary body text — warm silver */
+  --slate-200: #9E9A95; /* muted supporting text */
+  --slate-600: #706C68; /* subtle/footer text */
+  --slate-800: #1C1917; /* near-black with warm tint */
+
+  /* Ruby tones (alerts, badges) */
+  --ruby-300:  #E8A0A8;
+  --ruby-400:  #C9566A;
+  --ruby-500:  #A03248;
 
   --blue-300: #93C5FD;
 
@@ -93,10 +103,10 @@ body::before {
   top: -20%; left: -10%;
   width: 50%; height: 140%;
   background: 
-    radial-gradient(ellipse at 30% 50%, rgba(201, 162, 39, 0.22) 0%, transparent 60%),
-    linear-gradient(110deg, transparent 20%, rgba(201, 162, 39, 0.3) 25%, transparent 30%);
+    radial-gradient(ellipse at 30% 50%, rgba(122, 31, 48, 0.18) 0%, transparent 65%),
+    radial-gradient(ellipse at 60% 20%, rgba(184, 180, 175, 0.06) 0%, transparent 50%);
   border-radius: 50%;
-  filter: blur(20px);
+  filter: blur(28px);
   animation: glimmer 6s infinite alternate ease-in-out;
 }
 
@@ -104,10 +114,10 @@ body::after {
   bottom: -20%; right: -10%;
   width: 60%; height: 80%;
   background: 
-    radial-gradient(ellipse at 70% 50%, rgba(201, 162, 39, 0.22) 0%, transparent 60%),
-    linear-gradient(-70deg, transparent 20%, rgba(201, 162, 39, 0.3) 25%, transparent 30%);
+    radial-gradient(ellipse at 70% 50%, rgba(122, 31, 48, 0.15) 0%, transparent 65%),
+    radial-gradient(ellipse at 30% 80%, rgba(184, 180, 175, 0.06) 0%, transparent 50%);
   border-radius: 50%;
-  filter: blur(20px);
+  filter: blur(28px);
   animation: glimmer 5s infinite alternate-reverse ease-in-out;
 }
 
@@ -139,12 +149,23 @@ ul {
 
 /* ── Typography & Colors ───────────────────────────────────────── */
 .text-gradient-gold {
-  background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+  /* Antique silver shimmer flowing into warm garnet — luxurious & easy on the eye */
+  background: linear-gradient(
+    to right,
+    #B8B4AF 0%,
+    #E2DED8 18%,
+    #F0EDE8 30%,
+    #E8A0A8 45%,
+    #C9566A 55%,
+    #E8A0A8 65%,
+    #F0EDE8 78%,
+    #D4D0CA 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  text-shadow: 0px 2px 4px rgba(0,0,0,0.05);
+  filter: drop-shadow(0 1px 6px rgba(160, 50, 72, 0.25));
 }
 .text-gold-300 { color: var(--gold-300); }
 .text-gold-400 { color: var(--gold-400); }
@@ -182,19 +203,19 @@ ul {
 
 /* ── UI Components ─────────────────────────────────────────────── */
 .glass-card {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(28, 22, 20, 0.55);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(201, 162, 39, 0.3);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
+  border: 1px solid rgba(201, 86, 106, 0.18);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(240, 237, 232, 0.06);
   position: relative;
   z-index: 10;
-  border-radius: 0.75rem; /* rounded-xl */
-  padding: 1.25rem; /* p-5 */
+  border-radius: 0.75rem;
+  padding: 1.25rem;
 }
 
 .gold-border {
-  border: 1px solid rgba(224, 176, 48, 0.4);
+  border: 1px solid rgba(201, 86, 106, 0.22);
 }
 
 .btn-gold {
@@ -253,7 +274,7 @@ ul {
 
 .divider {
   height: 1px;
-  background-color: rgba(201, 162, 39, 0.1);
+  background: linear-gradient(to right, transparent, rgba(201, 86, 106, 0.2), rgba(184, 180, 175, 0.25), rgba(201, 86, 106, 0.2), transparent);
   margin: 0 auto;
 }
 
@@ -268,12 +289,12 @@ ul {
 }
 
 .hero-eyebrow {
-  color: rgba(250, 217, 106, 0.85);
+  color: rgba(212, 208, 202, 0.85);
   font-size: 0.75rem;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
-  text-shadow: 0 0 12px rgba(201, 162, 39, 0.5);
+  text-shadow: 0 0 16px rgba(160, 50, 72, 0.35);
 }
 
 .hero-title {
@@ -305,7 +326,7 @@ ul {
 .hero-ornament-line {
   height: 1px;
   width: 4rem;
-  background-color: rgba(201, 162, 39, 0.5);
+  background: linear-gradient(to right, transparent, rgba(201, 86, 106, 0.55), transparent);
 }
 .hero-ornament-icon {
   color: var(--gold-400);
@@ -325,13 +346,13 @@ ul {
 
 .detail-label {
   font-family: var(--font-script);
-  color: var(--gold-600);
+  color: var(--gold-400);
   font-size: 2rem;
   margin-bottom: 0.5rem;
   line-height: 1;
 }
 .detail-value {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(192, 192, 192, 0.9);
   font-size: 0.875rem;
   font-family: var(--font-body);
   text-transform: uppercase;
@@ -397,7 +418,8 @@ ul {
 }
 .name-card:hover {
   transform: translateY(-2px);
-  color: var(--gold-400) !important;
+  color: var(--gold-300) !important;
+  background: rgba(201, 86, 106, 0.08);
 }
 .name-card span {
   font-size: 0.875rem;
