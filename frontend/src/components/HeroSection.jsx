@@ -25,6 +25,12 @@ function HeroSection() {
 
       {/* Subtitle */}
       <p className="animate-fade-in-up hero-subtitle opacity-0"
+         style={{ animationDelay: '0.4s', animationFillMode: 'forwards', marginBottom: '0.25rem' }}>
+        AND
+      </p>
+
+      {/* Subtitle */}
+      <p className="animate-fade-in-up hero-subtitle opacity-0"
          style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
         Urbano Clan Annual Family Reunion
       </p>
@@ -49,13 +55,13 @@ function HeroSection() {
           AT 4:00 PM
         </p>
 
-        <p className="font-script" style={{fontSize: '2.5rem', lineHeight: 1, marginBottom: '0.75rem', color: 'var(--ruby-400)'}}>
+        <p style={{fontFamily: '"Cormorant Garamond", Georgia, serif', fontStyle: 'italic', fontWeight: 600, fontSize: '2rem', lineHeight: 1, letterSpacing: '0.06em', marginBottom: '0.75rem', color: 'var(--ruby-400)'}}>
           Venue
         </p>
-        <p className="font-display" style={{fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase', lineHeight: 1.5, marginBottom: '2rem', color: 'rgba(212, 208, 202, 0.78)', textShadow: '0 1px 6px rgba(0,0,0,0.7)'}}>
-          <span style={{display: 'block'}}>THE CELANDINE</span>
-          <span style={{display: 'block'}}>BALINTAWAK, QUEZON CITY</span>
-          <span style={{display: 'block'}}>(EVENT HALL)</span>
+        <p style={{fontFamily: '"Cormorant Garamond", Georgia, serif', fontStyle: 'italic', fontWeight: 500, fontSize: '1.25rem', letterSpacing: '0.04em', lineHeight: 1.6, marginBottom: '2rem', color: 'rgba(212, 208, 202, 0.88)', textShadow: '0 1px 6px rgba(0,0,0,0.7)'}}>
+          <span style={{display: 'block'}}>The Celandine</span>
+          <span style={{display: 'block'}}>Balintawak, Quezon City</span>
+          <span style={{display: 'block'}}>(Event Hall)</span>
         </p>
 
         {/* Divider */}
@@ -65,11 +71,11 @@ function HeroSection() {
           <span className="divider" style={{width: '6rem'}} />
         </div>
 
-        <p className="font-script" style={{fontSize: '2.5rem', lineHeight: 1, marginBottom: '0.75rem', color: 'var(--ruby-400)'}}>
+        <p style={{fontFamily: '"Cormorant Garamond", Georgia, serif', fontStyle: 'italic', fontWeight: 600, fontSize: '2rem', lineHeight: 1, letterSpacing: '0.06em', marginBottom: '0.75rem', color: 'var(--ruby-400)'}}>
           Dress Code
         </p>
-        <p className="font-display" style={{fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase', lineHeight: 1.625, maxWidth: '28rem', margin: '0 auto', color: 'rgba(212, 208, 202, 0.78)', textShadow: '0 1px 6px rgba(0,0,0,0.7)'}}>
-          KINDLY COME IN COCKTAIL DRESS FOR LADIES AND PANTS & POLO FOR GENTLEMEN IN ANY COLORS EXCEPT RED
+        <p style={{fontFamily: '"Cormorant Garamond", Georgia, serif', fontStyle: 'italic', fontWeight: 500, fontSize: '1.2rem', letterSpacing: '0.02em', lineHeight: 1.7, maxWidth: '28rem', margin: '0 auto', color: 'rgba(212, 208, 202, 0.88)', textShadow: '0 1px 6px rgba(0,0,0,0.7)'}}>
+          Kindly come in Cocktail Dress for Ladies <br></br> Pants &amp; Polo for Gentlemen in any colors except Red
         </p>
 
         <a

@@ -51,7 +51,7 @@ export const BLUE_BILLS = [
   'Dra. Josephine Sabando',
   'Dra. Josie Carlos',
   'Flor Urbano',
-  'Dra Becky Sison',
+  'Dra. Becky Sison',
 ];
 
 /** @type {string[]} 16 Gifts entourage members */
