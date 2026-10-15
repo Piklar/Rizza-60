@@ -80,18 +80,8 @@ html::after {
 }
 
 body {
-  /* Ombre red: deep wine-garnet → vivid crimson → warm rose */
-  background: #3a0010;
-  background-image:
-    linear-gradient(
-      to bottom,
-      #5c021c 0%,
-      #a0152a 20%,
-      #b83044 40%,
-      #b83044 60%,
-      #a0152a 80%,
-      #5c021c 100%
-    );
+  background: #3a0010 url('/src/assets/background.jpg') no-repeat center center;
+  background-size: cover;
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
